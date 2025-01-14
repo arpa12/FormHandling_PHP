@@ -13,165 +13,166 @@
         <p class="fs-3 fw-bolder text-center">Travel Booking Form</p>
       </div>
 
-
-      <div id="form_post">
-        <div class="accordion" id="travelBookingAccordion">
-          <!-- Basic Information -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingBasicInfo">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicInfo" aria-expanded="true" aria-controls="collapseBasicInfo">
-                Basic Information
-              </button>
-            </h2>
-            <div id="collapseBasicInfo" class="accordion-collapse collapse show" aria-labelledby="headingBasicInfo" data-bs-parent="#travelBookingAccordion">
-              <div class="accordion-body">
-                <div>
-                  <label for="fullName" class="form-label">Full Name</label>
-                  <input type="text" id="fullName" name="fullName" required class="form-control">
-                </div>
-                <div>
-                  <label for="email" class="form-label">Email Address</label>
-                  <input type="email" id="email" name="email" required class="form-control">
-                </div>
-                <div>
-                  <label for="phone" class="form-label">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" required class="form-control">
-                </div>
-                <div>
-                  <label for="dob" class="form-label">Date of Birth</label>
-                  <input type="date" id="dob" name="dob" required class="form-control">
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Travel Details -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTravelDetails">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTravelDetails" aria-expanded="false" aria-controls="collapseTravelDetails">
-                Travel Details
-              </button>
-            </h2>
-            <div id="collapseTravelDetails" class="accordion-collapse collapse" aria-labelledby="headingTravelDetails" data-bs-parent="#travelBookingAccordion">
-              <div class="accordion-body">
-                <div>
-                  <label for="destination" class="form-label">Travel Destination</label>
-                  <input type="text" id="destination" name="destination" required class="form-control">
-                </div>
-                <div>
-                  <label for="departureDate" class="form-label">Departure Date</label>
-                  <input type="date" id="departureDate" name="departureDate" required class="form-control">
-                </div>
-                <div>
-                  <label for="returnDate" class="form-label">Return Date</label>
-                  <input type="date" id="returnDate" name="returnDate" required class="form-control">
-                </div>
-                <div>
-                  <label for="travelMode" class="form-label">Preferred Mode of Travel</label>
-                  <select id="travelMode" name="travelMode" required class="form-select">
-                    <option value="flight">Flight</option>
-                    <option value="train">Train</option>
-                    <option value="bus">Bus</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="travelers" class="form-label">Number of Travelers</label>
-                  <input type="number" id="travelers" name="travelers" required class="form-control">
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Accommodation -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingAccommodation">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccommodation" aria-expanded="false" aria-controls="collapseAccommodation">
-                Accommodation
-              </button>
-            </h2>
-            <div id="collapseAccommodation" class="accordion-collapse collapse" aria-labelledby="headingAccommodation" data-bs-parent="#travelBookingAccordion">
-              <div class="accordion-body">
-                <div>
-                  <label class="form-label">Accommodation Required?</label>
+      <form action="form.php" method="POST">
+        <div id="form_post">
+          <div class="accordion" id="travelBookingAccordion">
+            <!-- Basic Information -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingBasicInfo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBasicInfo" aria-expanded="true" aria-controls="collapseBasicInfo">
+                  Basic Information
+                </button>
+              </h2>
+              <div id="collapseBasicInfo" class="accordion-collapse collapse show" aria-labelledby="headingBasicInfo" data-bs-parent="#travelBookingAccordion">
+                <div class="accordion-body">
                   <div>
-                    <label>
-                      <input type="radio" name="accommodation" value="yes" required> Yes
-                    </label>
-                    <label class="ms-3">
-                      <input type="radio" name="accommodation" value="no"> No
-                    </label>
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required class="form-control">
                   </div>
                 </div>
-                <div>
-                  <label for="roomType" class="form-label">Room Preferences</label>
-                  <select id="roomType" name="roomType" class="form-select">
-                    <option value="single">Single</option>
-                    <option value="double">Double</option>
-                    <option value="suite">Suite</option>
-                  </select>
+              </div>
+            </div>
+    
+            <!-- Travel Details -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTravelDetails">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTravelDetails" aria-expanded="false" aria-controls="collapseTravelDetails">
+                  Travel Details
+                </button>
+              </h2>
+              <div id="collapseTravelDetails" class="accordion-collapse collapse" aria-labelledby="headingTravelDetails" data-bs-parent="#travelBookingAccordion">
+                <div class="accordion-body">
+                  <div>
+                    <label for="destination" class="form-label">Travel Destination</label>
+                    <input type="text" id="destination" name="destination" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="departureDate" class="form-label">Departure Date</label>
+                    <input type="date" id="departureDate" name="departureDate" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="returnDate" class="form-label">Return Date</label>
+                    <input type="date" id="returnDate" name="returnDate" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="travelMode" class="form-label">Preferred Mode of Travel</label>
+                    <select id="travelMode" name="travelMode" required class="form-select">
+                      <option value="flight">Flight</option>
+                      <option value="train">Train</option>
+                      <option value="bus">Bus</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="travelers" class="form-label">Number of Travelers</label>
+                    <input type="number" id="travelers" name="travelers" required class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accommodation -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAccommodation">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccommodation" aria-expanded="false" aria-controls="collapseAccommodation">
+                  Accommodation
+                </button>
+              </h2>
+              <div id="collapseAccommodation" class="accordion-collapse collapse" aria-labelledby="headingAccommodation" data-bs-parent="#travelBookingAccordion">
+                <div class="accordion-body">
+                  <div>
+                    <label class="form-label">Accommodation Required?</label>
+                    <div>
+                      <label>
+                        <input type="radio" name="accommodation" value="yes" required> Yes
+                      </label>
+                      <label class="ms-3">
+                        <input type="radio" name="accommodation" value="no"> No
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="roomType" class="form-label">Room Preferences</label>
+                    <select id="roomType" name="roomType" class="form-select">
+                      <option value="single">Single</option>
+                      <option value="double">Double</option>
+                      <option value="suite">Suite</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Special Requests -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSpecialRequests">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecialRequests" aria-expanded="false" aria-controls="collapseSpecialRequests">
+                  Special Requests
+                </button>
+              </h2>
+              <div id="collapseSpecialRequests" class="accordion-collapse collapse" aria-labelledby="headingSpecialRequests" data-bs-parent="#travelBookingAccordion">
+                <div class="accordion-body">
+                  <label for="specialRequests" class="form-label">Special Requests</label>
+                  <textarea id="specialRequests" name="specialRequests" rows="4" class="form-control"></textarea>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Emergency Contact -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEmergencyContact">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEmergencyContact" aria-expanded="false" aria-controls="collapseEmergencyContact">
+                  Emergency Contact
+                </button>
+              </h2>
+              <div id="collapseEmergencyContact" class="accordion-collapse collapse" aria-labelledby="headingEmergencyContact" data-bs-parent="#travelBookingAccordion">
+                <div class="accordion-body">
+                  <div>
+                    <label for="emergencyName" class="form-label">Emergency Contact Name</label>
+                    <input type="text" id="emergencyName" name="emergencyName" required class="form-control">
+                  </div>
+                  <div>
+                    <label for="emergencyPhone" class="form-label">Emergency Contact Phone</label>
+                    <input type="tel" id="emergencyPhone" name="emergencyPhone" required class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Agreement -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAgreement">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAgreement" aria-expanded="false" aria-controls="collapseAgreement">
+                  Agreement
+                </button>
+              </h2>
+              <div id="collapseAgreement" class="accordion-collapse collapse" aria-labelledby="headingAgreement" data-bs-parent="#travelBookingAccordion">
+                <div class="accordion-body">
+                  <label>
+                    <input type="checkbox" name="agreement" required> I agree to the terms and conditions
+                  </label>
                 </div>
               </div>
             </div>
           </div>
-  
-          <!-- Special Requests -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSpecialRequests">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecialRequests" aria-expanded="false" aria-controls="collapseSpecialRequests">
-                Special Requests
-              </button>
-            </h2>
-            <div id="collapseSpecialRequests" class="accordion-collapse collapse" aria-labelledby="headingSpecialRequests" data-bs-parent="#travelBookingAccordion">
-              <div class="accordion-body">
-                <label for="specialRequests" class="form-label">Special Requests</label>
-                <textarea id="specialRequests" name="specialRequests" rows="4" class="form-control"></textarea>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Emergency Contact -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingEmergencyContact">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEmergencyContact" aria-expanded="false" aria-controls="collapseEmergencyContact">
-                Emergency Contact
-              </button>
-            </h2>
-            <div id="collapseEmergencyContact" class="accordion-collapse collapse" aria-labelledby="headingEmergencyContact" data-bs-parent="#travelBookingAccordion">
-              <div class="accordion-body">
-                <div>
-                  <label for="emergencyName" class="form-label">Emergency Contact Name</label>
-                  <input type="text" id="emergencyName" name="emergencyName" required class="form-control">
-                </div>
-                <div>
-                  <label for="emergencyPhone" class="form-label">Emergency Contact Phone</label>
-                  <input type="tel" id="emergencyPhone" name="emergencyPhone" required class="form-control">
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Agreement -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingAgreement">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAgreement" aria-expanded="false" aria-controls="collapseAgreement">
-                Agreement
-              </button>
-            </h2>
-            <div id="collapseAgreement" class="accordion-collapse collapse" aria-labelledby="headingAgreement" data-bs-parent="#travelBookingAccordion">
-              <div class="accordion-body">
-                <label>
-                  <input type="checkbox" name="agreement" required> I agree to the terms and conditions
-                </label>
-              </div>
-            </div>
+    
+          <!-- Submit Button -->
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </div>
-  
-        <!-- Submit Button -->
-        <div class="text-center mt-4">
-          <button type="submit" class="btn btn-success">Submit</button>
-        </div>
-      </div>
+      </form>
 
       </div>
 
