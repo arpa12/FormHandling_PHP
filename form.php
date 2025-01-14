@@ -17,20 +17,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Collect form data and validate
-    $fullName = $_POST['fullName'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $dob = $_POST['dob'] ?? '';
-    $destination = $_POST['destination'] ?? '';
-    $departureDate = $_POST['departureDate'] ?? '';
-    $returnDate = $_POST['returnDate'] ?? '';
-    $travelMode = $_POST['travelMode'] ?? '';
-    $travelers = $_POST['travelers'] ?? '';
-    $accommodation = $_POST['accommodation'] ?? '';
-    $roomType = $_POST['roomType'] ?? '';
-    $specialRequests = $_POST['specialRequests'] ?? '';
-    $emergencyName = $_POST['emergencyName'] ?? '';
-    $emergencyPhone = $_POST['emergencyPhone'] ?? '';
+    $fullName = htmlspecialchars($_POST['fullName'] ?? '');
+    $email = htmlspecialchars($_POST['email'] ?? '');
+    $phone = htmlspecialchars($_POST['phone'] ?? '');
+    $dob = htmlspecialchars($_POST['dob'] ?? '');
+    $destination = htmlspecialchars($_POST['destination'] ?? '');
+    $departureDate = htmlspecialchars($_POST['departureDate'] ?? '');
+    $returnDate = htmlspecialchars($_POST['returnDate'] ?? '');
+    $travelMode = htmlspecialchars($_POST['travelMode'] ?? '');
+    $travelers = htmlspecialchars($_POST['travelers'] ?? '');
+    $accommodation = htmlspecialchars($_POST['accommodation'] ?? '');
+    $roomType = htmlspecialchars($_POST['roomType'] ?? '');
+    $specialRequests = htmlspecialchars($_POST['specialRequests'] ?? '');
+    $emergencyName = htmlspecialchars($_POST['emergencyName'] ?? '');
+    $emergencyPhone = htmlspecialchars($_POST['emergencyPhone'] ?? '');
     $agreement = isset($_POST['agreement']) && $_POST['agreement'] === "on" ? 1 : 0;
 
     // Check if required fields are provided
@@ -104,6 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
     $conn->close();
 
-    echo "Booking details submitted successfully!";
+    // URL encode form data for passing to form.html
+    $redirectUrl = "form.html?success=1&fullName=" . urlencode($fullName) . "&email=" . urlencode($email) . "&phone=" . urlencode($phone) . "&dob=" . urlencode($dob) . "&destination=" . urlencode($destination) . "&departureDate=" . urlencode($departureDate) . "&returnDate=" . urlencode($returnDate) . "&travelMode=" . urlencode($travelMode) . "&travelers=" . urlencode($travelers) . "&accommodation=" . urlencode($accommodation) . "&roomType=" . urlencode($roomType) . "&specialRequests=" . urlencode($specialRequests) . "&emergencyName=" . urlencode($emergencyName) . "&emergencyPhone=" . urlencode($emergencyPhone);
+    
+    // Redirect to the form page
+    header("Location: $redirectUrl");
+    exit;
 }
 ?>

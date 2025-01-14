@@ -173,11 +173,64 @@
           </div>
         </div>
       </form>
-
+      
+       <!-- Modal to Display Submitted Data -->
+       <div class="modal fade" id="submittedModal" tabindex="-1" aria-labelledby="submittedModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="submittedModalLabel">Booking Submitted Successfully</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>Full Name:</strong> <span id="modalFullName"></span></p>
+              <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+              <p><strong>Phone:</strong> <span id="modalPhone"></span></p>
+              <p><strong>Date of Birth:</strong> <span id="modalDob"></span></p>
+              <p><strong>Destination:</strong> <span id="modalDestination"></span></p>
+              <p><strong>Departure Date:</strong> <span id="modalDepartureDate"></span></p>
+              <p><strong>Return Date:</strong> <span id="modalReturnDate"></span></p>
+              <p><strong>Preferred Mode of Travel:</strong> <span id="modalTravelMode"></span></p>
+              <p><strong>Number of Travelers:</strong> <span id="modalTravelers"></span></p>
+              <p><strong>Accommodation:</strong> <span id="modalAccommodation"></span></p>
+              <p><strong>Room Type:</strong> <span id="modalRoomType"></span></p>
+              <p><strong>Special Requests:</strong> <span id="modalSpecialRequests"></span></p>
+              <p><strong>Emergency Contact Name:</strong> <span id="modalEmergencyName"></span></p>
+              <p><strong>Emergency Contact Phone:</strong> <span id="modalEmergencyPhone"></span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
-
+    </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('success')) {
+          document.getElementById('modalFullName').textContent = params.get('fullName');
+          document.getElementById('modalEmail').textContent = params.get('email');
+          document.getElementById('modalPhone').textContent = params.get('phone');
+          document.getElementById('modalDob').textContent = params.get('dob');
+          document.getElementById('modalDestination').textContent = params.get('destination');
+          document.getElementById('modalDepartureDate').textContent = params.get('departureDate');
+          document.getElementById('modalReturnDate').textContent = params.get('returnDate');
+          document.getElementById('modalTravelMode').textContent = params.get('travelMode');
+          document.getElementById('modalTravelers').textContent = params.get('travelers');
+          document.getElementById('modalAccommodation').textContent = params.get('accommodation');
+          document.getElementById('modalRoomType').textContent = params.get('roomType');
+          document.getElementById('modalSpecialRequests').textContent = params.get('specialRequests');
+          document.getElementById('modalEmergencyName').textContent = params.get('emergencyName');
+          document.getElementById('modalEmergencyPhone').textContent = params.get('emergencyPhone');
+    
+          var myModal = new bootstrap.Modal(document.getElementById('submittedModal'));
+          myModal.show();
+        }
+      };
+    </script>
   </body>
 </html>
